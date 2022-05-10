@@ -52,7 +52,7 @@ document.write('<br/><br/><br/><br/><hr/>')
 let milissegundos_por_dia = (1*24*60*60*1000)
 document.write('1 dia tem:' + milissegundos_por_dia + ' Milissegundos')
 document.write("<br/>")
-document.write('A diferença entre data1 e data2 é de: ' + Math.ceil(milissegundos_entre_datas / milissegundos_por_dia) + ' dia(s)')
+document.write('A diferença entre data1 e data2 é de: ' + Math.ceil(milissegundos_entre_datas / milissegundos_por_dia) + ' dia(s)b')
  
 
 
