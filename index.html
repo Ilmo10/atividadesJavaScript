@@ -1,30 +1,26 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <title>manipulacao_classesDe_elementos</title>
-        <meta charset="utf-8">
-        <style>
-          .estilo1{
-            background-color: red;
-            color: white;
-          }
-          .estilo2{
-            width: 400px;
-            height: 50px;
-            background-color: red;
-            text-align: center;
-            font-size: 25px;
-            color: white;
-            padding: 25px;
-          }
-        </style>
-        <script src="manipulacao_classesDe_elementos.js"></script>
-    </head>
-    <body>
-      <div id="mensagem" class="estilo1">
-        modificando a classe do elemento.
-      </div>
-      <hr>
-      <button type="button" onclick="modificaClasse()">Aplicar classe</button>
-    </body>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>js.</title>
+  <script>
+    function acionaCampo() {
+      document.getElementById('campo').style.background = "yellow"
+    }
+    function validaCampo() {
+      var valorCampo = document.getElementById('campo').value
+      if (valorCampo.length < 3) {
+        document.getElementById('campo').style.background = "red"
+      } else {
+        document.getElementById('campo').style.background = "green"
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <input id="campo" type="text" onfocus="acionaCampo()" onblur="validaCampo()" />
+</body>
+
 </html>
