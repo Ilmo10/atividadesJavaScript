@@ -94,23 +94,24 @@
     </div>  
     
     <script>
-      function calcular(tipo, valor) {
+      function calcular(tipo, valor) { // abriu uma function com nome calcular com duas propiedades tipo e valor 
 
-        if(tipo === 'acao'){
+        if(tipo === 'acao'){ 
+          /*abriu um If ( se) tipo for identico com acao vai se comportar utilizando a novas IF  abaixo*/
           
-          if(valor === 'c'){
+          if(valor === 'c'){ // se valor for identico a "c" vai limpar div com id resultado( aplicando com o valor .value)
             document.getElementById('resultado').value = ''
           }
           if(valor === '+' || valor === '-' || valor === '*' || valor === '/' || valor === '.'){
-            document.getElementById('resultado').value += valor
+            document.getElementById('resultado').value += valor// se valor for identico a + ,-,*,/ ou . ela vai concatenar com o valor ue estiverem na  div com id resultado( aplicando o valor . value)
           }
-          if(valor === '=') {
+          if(valor === '=') {// se valor for identico com = , a variavel valor_campo que recebe o valor da div com id resultado faz a soma utilizando  EVAL que utiliza os caracteres para somar. e document.getElementeById envia o resultado que a variavel gera e envia para a div que contem id resultado( aplicando o valor .value)
             let valor_campo = eval(document.getElementById('resultado').value)
             
             document.getElementById('resultado').value = valor_campo
             
           }
-        }else if(tipo === 'valor'){
+        }else if(tipo === 'valor'){ // E SE tipo for identico com valor ele concatena  e transmite para a div que contem a id resultado.
           document.getElementById('resultado').value += valor
         }
       }
