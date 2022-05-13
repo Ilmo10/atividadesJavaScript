@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>praticando</title>
+  <script>
+    
+    let lista_frutas = Array('banana','uva', 'maça','melão')
+
+    for(frutas in lista_frutas){
+      document.write('gosto da fruta ' + lista_frutas[0] + ' e ' + lista_frutas[2])
+      break
+    }
+    document.write('<hr />')
+    var lista_ffrutas = Array();
+lista_ffrutas[0] = 'Banana';
+lista_ffrutas[1] = 'Maçã';
+lista_ffrutas[2] = 'Morango';
+lista_ffrutas[3] = 'Uva';
+for (var i = 0; i < lista_ffrutas.length; i++) {
+document.write(lista_ffrutas[i]);
+console.log(lista_ffrutas[i])
+} 
+document.write('<hr />')
+
+    let x = 1
+    let y = 1
+
+    while(x <= 10){
+      y = 1;
+      while(y <= 10){
+      console.log(x + ' x ' + y + ' = ' + x*y  );
+      document.write(x + ' x ' + y + ' = ' + x*y + '<br />');
+      y++;
+    }
+    console.log('\n');
+    document.write('<hr />');
+    x++;
+  }
+  </script>
+</head>
+
+<body>
+</body>
+
+</html>
