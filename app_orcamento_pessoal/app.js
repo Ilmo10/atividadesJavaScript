@@ -82,14 +82,21 @@ function cadastrarDespesa(){
       )
       
       if(despesa.validarDados()) {
-        //bd.gravar(despesa)
+        bd.gravar(despesa)
     
         document.getElementById('modal_titulo').innerHTML = 'Registro inserido com sucesso'
         document.getElementById('modal_titulo_div').className = 'modal-header text-success'
         document.getElementById('modal_conteudo').innerHTML = 'Despesa foi cadastrada com sucesso!'
         document.getElementById('modal_btn').innerHTML = 'Voltar'
         document.getElementById('modal_btn').className = 'btn btn-success'
-    
+        
+        
+      ano.value =''
+      mes.value=''
+      dia.value=''
+      tipo.value=''
+      descricao.value=''
+      valor.value=''
         //dialog de sucesso
         $('#modalRegistraDespesa').modal('show') 
       } else {
@@ -103,6 +110,8 @@ function cadastrarDespesa(){
         //dialog de erro
         $('#modalRegistraDespesa').modal('show') 
       }
+      
+      
     }
 
 function carregaListaDespesas(){
@@ -141,3 +150,15 @@ function carregaListaDespesas(){
     })
 }
 
+
+
+/*function limpar(){
+
+  document.getElementById('ano').innerHTML =""
+  document.getElementById('mes').innerHTML =""
+  document.getElementById('dia').innerHTML =""
+  document.getElementById('tipo').innerHTML =""
+  document.getElementById('descricao').innerHTML =""
+  document.getElementById('valor').innerHTML =""
+}
+*/
