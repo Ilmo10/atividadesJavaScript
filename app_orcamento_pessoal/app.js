@@ -39,6 +39,27 @@ class Bd {
 
     localStorage.setItem('id', id)
   }
+  recuperaTodosRegistros(){
+
+    //array de despesas
+    let despesas = Array()
+
+    let id = localStorage.getItem('id')
+    //recuperar todas as despesas emlocaStorage
+    for(let i = 1; i <= id; i ++){
+
+      //recuperar as despesas
+      let despesa = JSON.parse(localStorage.getItem(i))
+
+      //existe a possibilidade de haver indices qeu foram pulados ou excluidos
+      //neste caso nos vamos pulas esse indice.
+      if(despesa === null){
+        continue
+      }
+      despesas.push(despesa)
+    }
+    return despesas
+  }
 }
 let bd = new Bd()
 
@@ -61,10 +82,34 @@ function cadastrarDespesa(){
       )
       
       if(despesa.validarDados()) {
-          bd.gravar(despesa)
-          $('#sucessoGravacao').modal('show')
+        //bd.gravar(despesa)
+    
+        document.getElementById('modal_titulo').innerHTML = 'Registro inserido com sucesso'
+        document.getElementById('modal_titulo_div').className = 'modal-header text-success'
+        document.getElementById('modal_conteudo').innerHTML = 'Despesa foi cadastrada com sucesso!'
+        document.getElementById('modal_btn').innerHTML = 'Voltar'
+        document.getElementById('modal_btn').className = 'btn btn-success'
+    
+        //dialog de sucesso
+        $('#modalRegistraDespesa').modal('show') 
       } else {
-         $('#erroGravacao').modal('show')
+        
+        document.getElementById('modal_titulo').innerHTML = 'Erro na inclusão do registro'
+        document.getElementById('modal_titulo_div').className = 'modal-header text-danger'
+        document.getElementById('modal_conteudo').innerHTML = 'Erro na gravação, verifique se todos os campos foram preenchidos corretamente!'
+        document.getElementById('modal_btn').innerHTML = 'Voltar e corrigir'
+        document.getElementById('modal_btn').className = 'btn btn-danger'
+    
+        //dialog de erro
+        $('#modalRegistraDespesa').modal('show') 
       }
+    }
+
+function carregaListaDespesas(){
+
+    let despesas = Array()
+
+    despesas = bd.recuperaTodosRegistros()
+    console.log(despesas)
 }
 
